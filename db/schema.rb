@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_24_050119) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_24_053540) do
   create_table "fruits", force: :cascade do |t|
     t.string "name"
     t.string "color"
@@ -22,9 +22,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_24_050119) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "fruit_id"
-    t.index ["fruit_id"], name: "index_trees_on_fruit_id"
+    t.integer "fruity_id"
+    t.index ["fruity_id"], name: "index_trees_on_fruity_id"
   end
 
-  add_foreign_key "trees", "fruits"
+  add_foreign_key "trees", "fruits", column: "fruity_id"
 end
